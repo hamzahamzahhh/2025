@@ -310,3 +310,32 @@
     </script>
 </body>
 </html
+</body>
+</html>>� الصف لحذفه (1 للصف الأول):');
+            if (index && index > 0 && index <= data.length) {
+                data.splice(index - 1, 1);
+                saveData(data);
+                updateTable();
+            } else {
+                alert('رقم الصف غير صحيح.');
+            }
+        }
+
+        function goBack() {
+            document.getElementById('tablePage').classList.add('hidden');
+            document.getElementById('parentLogin').classList.remove('hidden');
+            document.getElementById('teacherLogin').classList.remove('hidden');
+            document.getElementById('editButton').style.display = 'none';
+            document.getElementById('addButton').style.display = 'none';
+            document.getElementById('deleteButton').style.display = 'none';
+            document.getElementById('backButton').style.display = 'none';
+        }
+
+        // تحميل البيانات عند بدء الصفحة
+        document.addEventListener('DOMContentLoaded', updateTable);
+    </script>
+</body>
+</html>e);
+    </script>
+</body>
+    </html>
