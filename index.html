@@ -209,7 +209,7 @@
             const tableBody = document.getElementById('tableBody');
             const data = loadData();
             tableBody.innerHTML = '';
-            data.forEach((row, index) => {
+            data.forEach((row) => {
                 const tr = document.createElement('tr');
                 tr.innerHTML = `<td>${row.student}</td><td>${row.sura}</td><td>${row.ayat}</td><td>${row.grade}</td>`;
                 tableBody.appendChild(tr);
@@ -224,7 +224,8 @@
             if (username && password && name) {
                 document.getElementById('parentLogin').classList.add('hidden');
                 document.getElementById('teacherLogin').classList.add('hidden');
-                document.getElementById('tablePage').classList.remove('hidden');document.getElementById('backButton').style.display = 'inline-block';
+                document.getElementById('tablePage').classList.remove('hidden');
+                document.getElementById('backButton').style.display = 'inline-block';
                 updateTable();
             } else {
                 alert('يرجى إدخال جميع الحقول.');
@@ -252,40 +253,45 @@
         function editTable() {
             const data = loadData();
             const index = prompt('أدخل رقم الصف لتعديله (1 للصف الأول):');
-            if (index && index > 0 && index <= data.length) {
+            if (index && index > 0&& index <= data.length) {
                 const row = data[index - 1];
-                row.student = prompt('اسم الطالب:', row.student);
-                row.sura = prompt('اسم السورة:', row.sura);
-                row.ayat = prompt('عدد الآيات:', row.ayat);
-                row.grade = prompt('تقدير الحفظ:', row.grade);
-                saveData(data);
-                updateTable();
+                const student = prompt('أدخل اسم الطالب:', row.student);
+                const sura = prompt('أدخل اسم السورة:', row.sura);
+                const ayat = prompt('أدخل عدد الآيات:', row.ayat);
+                const grade = prompt('أدخل تقدير الحفظ:', row.grade);
+
+                if (student && sura && ayat && grade) {
+                    data[index - 1] = { student, sura, ayat, grade };
+                    saveData(data);
+                    updateTable();
+                } else {
+                    alert('يرجى إدخال جميع البيانات.');
+                }
             } else {
                 alert('رقم الصف غير صحيح.');
             }
         }
 
         function addRow() {
-            const data = loadData();
-            const newRow = {
-                student: prompt('اسم الطالب:'),
-                sura: prompt('اسم السورة:'),
-                ayat: prompt('عدد الآيات:'),
-                grade: prompt('تقدير الحفظ:')
-            };
+            const student = prompt('أدخل اسم الطالب:');
+            const sura = prompt('أدخل اسم السورة:');
+            const ayat = prompt('أدخل عدد الآيات:');
+            const grade = prompt('أدخل تقدير الحفظ:');
 
-            if (newRow.student && newRow.sura && newRow.ayat && newRow.grade) {
-                data.push(newRow);
+            if (student && sura && ayat && grade) {
+                const data = loadData();
+                data.push({ student, sura, ayat, grade });
                 saveData(data);
                 updateTable();
             } else {
-                alert('يرجى إدخال جميع الحقول.');
+                alert('يرجى إدخال جميع البيانات.');
             }
         }
 
         function deleteRow() {
-            const data = loadData();
             const index = prompt('أدخل رقم الصف لحذفه (1 للصف الأول):');
+            const data = loadData();
+
             if (index && index > 0 && index <= data.length) {
                 data.splice(index - 1, 1);
                 saveData(data);
@@ -296,46 +302,19 @@
         }
 
         function goBack() {
-            document.getElementById('tablePage').classList.add('hidden');
             document.getElementById('parentLogin').classList.remove('hidden');
             document.getElementById('teacherLogin').classList.remove('hidden');
+            document.getElementById('tablePage').classList.add('hidden');
             document.getElementById('editButton').style.display = 'none';
             document.getElementById('addButton').style.display = 'none';
             document.getElementById('deleteButton').style.display = 'none';
             document.getElementById('backButton').style.display = 'none';
         }
 
-        // تحميل البيانات عند بدء الصفحة
-        document.addEventListener('DOMContentLoaded'
+        // تحميل البيانات عند بدء تشغيل الصفحة
+        window.onload = function() {
+            updateTable();
+        };
     </script>
 </body>
-</html
-</body>
-</html>>� الصف لحذفه (1 للصف الأول):');
-            if (index && index > 0 && index <= data.length) {
-                data.splice(index - 1, 1);
-                saveData(data);
-                updateTable();
-            } else {
-                alert('رقم الصف غير صحيح.');
-            }
-        }
-
-        function goBack() {
-            document.getElementById('tablePage').classList.add('hidden');
-            document.getElementById('parentLogin').classList.remove('hidden');
-            document.getElementById('teacherLogin').classList.remove('hidden');
-            document.getElementById('editButton').style.display = 'none';
-            document.getElementById('addButton').style.display = 'none';
-            document.getElementById('deleteButton').style.display = 'none';
-            document.getElementById('backButton').style.display = 'none';
-        }
-
-        // تحميل البيانات عند بدء الصفحة
-        document.addEventListener('DOMContentLoaded', updateTable);
-    </script>
-</body>
-</html>e);
-    </script>
-</body>
-    </html>
+</html>
