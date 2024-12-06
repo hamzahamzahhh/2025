@@ -1,144 +1,139 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>  مسار النجاح </title>
+    <title>خطوات استعمال موقع النجاح</title>
     <style>
+        /* استخدام خط جميل يتناسب مع التصميم الفخم */
         body {
             font-family: 'Arial', sans-serif;
+            background-color: #f0f8ff; /* لون خلفية أزرق فاتح */
+            color: #3e8e41; /* لون أخضر هادئ */
+            text-align: center;
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
-            color: #2ecc71;
-            text-align: center;
+            animation: fadeIn 1.5s ease-in-out; /* إضافة تأثير ظهور الصفحة */
         }
 
+        /* تأثير لظهور العناوين */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* رأس الصفحة */
         header {
-            padding: 20px;
-            background-color: #2ecc71;
+            background-color: #3e8e41;
             color: white;
-            font-size: 2rem;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-
-        section {
             padding: 20px;
-            max-width: 800px;
-            margin: auto;
+            border-bottom: 4px solid #6dbf60; /* إضافة خط أخضر أسفل العنوان */
             animation: slideIn 1.5s ease-in-out;
         }
 
-        section h2 {
-            font-size: 2rem;
-            margin-bottom: 10px;
+        /* تأثير لحركة الشريط العلوي */
+        @keyframes slideIn {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
         }
 
-        section p {
-            font-size: 1.2rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
+        /* تنسيق الخطوات مع إضافة تأثيرات عند التمرير */
         .step {
-            background-color: #f0f0f0;
-            border: 2px solid #2ecc71;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 20px;
-            animation: zoomIn 1.5s ease-in-out;
+            margin: 30px;
+            padding: 30px;
+            border: 3px solid #6dbf60;
+            border-radius: 15px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .step h3 {
-            font-size: 1.5rem;
+        /* تأثير عند التمرير فوق الخطوات */
+        .step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
         }
 
-        .step p {
-            font-size: 1rem;
-            color: #333;
+        .step h2 {
+            color: #3e8e41;
+            font-size: 22px;
+            font-weight: bold;
+            transition: color 0.3s ease;
         }
 
-        .visit-btn {
-            display: inline-block;
+        .step:hover h2 {
+            color: #6dbf60;
+        }
+
+        /* تنسيق الأزرار */
+        button {
+            background-color: #6dbf60;
+            color: white;
             padding: 15px 30px;
-            background-color: #2ecc71;
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-            border-radius: 8px;
-            transition: background-color 0.3s, transform 0.3s;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
             margin-top: 20px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
-        .visit-btn:hover {
-            background-color: #27ae60;
-            transform: scale(1.1);
+        button:hover {
+            background-color: #4b9f46;
+            transform: translateY(-5px);
         }
 
+        /* تنسيق التذييل */
         footer {
-            padding: 10px;
-            background-color: #2ecc71;
-            color: white;
             position: fixed;
             bottom: 0;
             width: 100%;
-            font-size: 1rem;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes zoomIn {
-            from {
-                transform: scale(0.8);
-                opacity: 0;
-            }
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
+            background-color: #3e8e41;
+            padding: 15px;
+            text-align: center;
+            color: white;
+            font-size: 16px;
+            border-top: 4px solid #6dbf60;
         }
     </style>
 </head>
 <body>
-    <header>مرحباً بك في دليل استخدام الموقع مسار النجاح</header>
-    <section>
-        <h2>كيفية استخدام الموقع</h2>
-        <div class="step">
-            <h3>الخطوة 1: التسجيل في الموقع</h3>
-            <p>قم بتسجيل الدخول أو إنشاء حساب جديد باستخدام رقم الهاتف الخاص بك. اختر المادة الدراسية (فيزياء أو رياضيات) والمستوى الدراسي (الأولى أو الثانية من البكالوريا).</p>
-        </div>
-        <div class="step">
-            <h3>الخطوة 2: تحميل إثبات الدفع</h3>
-            <p>قم بتحميل إثبات الدفع عبر تحميل الصورة المناسبة على الموقع بعد دفع رسوم التسجيل.</p>
-        </div>
-        <div class="step">
-            <h3>الخطوة 3: الانضمام إلى مجموعة واتساب</h3>
-            <p>بعد التسجيل، سيتم إضافتك إلى مجموعة الدعم عبر واتساب حيث يمكنك الحصول على شروحات إضافية ودعم فني.</p>
-        </div>
-        <div class="step">
-            <h3>الخطوة 4: البدء في الدروس</h3>
-            <p>ابدأ في دراسة المواد المتاحة وفقًا للمستوى الدراسي الذي اخترته، واستفد من الشروحات والدروس عبر الإنترنت.</p>
-        </div>
-        <a class="visit-btn" href="https://tinyurl.com/Msar-anjah" target="_blank">دخول الموقع</a>
-    </section>
-   
+
+    
+
+    <div class="step">
+        <h2>الخطوة 1: إدخال البيانات الشخصية</h2>
+        <p>يرجى إدخال الاسم الكامل ورقم الهاتف.</p>
+    </div>
+
+    <div class="step">
+        <h2>الخطوة 2: اختيار المادة والمستوى</h2>
+        <p>اختر المادة (فيزياء أو رياضيات) والمستوى الدراسي (أولى أو ثانية بكالوريا).</p>
+    </div>
+
+    <div class="step">
+        <h2>الخطوة 3: تحميل إثبات الدفع</h2>
+        <p>قم بتحميل صورة لإثبات الدفع في الحقل المخصص.</p>
+    </div>
+
+    <div class="step">
+        <h2>الخطوة 4: إرسال البيانات</h2>
+        <p>اضغط على زر إرسال البيانات ليتم إرسالها عبر البوت إلى تلغرام.</p>
+    </div>
+
+    <div class="step">
+        <h2>الخطوة 5: ستتلقى كود دخول المجموعة</h2>
+        <p>بعد إرسال البيانات، سيتم إرسال كود لدخول المجموعة عبر واتساب.</p>
+    </div>
+
+    <div class="step">
+        <h2>الخطوة 6: تلقي الشروحات عبر واتساب</h2>
+        <p>بعد إرسال البيانات، ستتلقى الشروحات عبر واتساب.</p>
+    </div>
+
+    <button onclick="window.location.href='https://hamzahamzahhh.github.io/34h___a___m___z___a34/'">دخول الموقع</button>
+
+    
+
 </body>
 </html>
